@@ -9,8 +9,4 @@ public class Node {
         next = null;
     }
 
-    @Override
-    public String toString() {
-        return "[" + data + "," + next + "]";
-    }
 }
