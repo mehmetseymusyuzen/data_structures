@@ -3,30 +3,19 @@ package linked_list;
 public class LinkedListTest {
     public static void main(String[] args) {
 
-        LinkedList l = new LinkedList();
+        LinkedList<Integer> l = new LinkedList<>();
 
-        Node n1 = new Node(5);
-        Node n2 = new Node(13);
-        Node n3 = new Node(2);
-        Node n4 = new Node(9);
-        Node n5 = new Node(10);
+        l.addToTail(6);
+        l.addToTail(10);
+        l.addToTail(3);
+        l.addToTail(2);
+        l.addToTail(8);
+        l.addToTail(6);
+        l.addToHead(4);
+        l.addToTail(1);
+        l.addToHead(9);
+        l.addToTail(12);
 
-        l.addInOrder(n1);
-        l.print();
-
-        l.addInOrder(n2);
-        l.print();
-
-        l.addInOrder(n3);
-        l.print();
-
-        l.addInOrder(n4);
-        l.print();
-
-        l.addInOrder(n5);
-        l.print();
-
-        l.delete(13);
         l.print();
 
     }
