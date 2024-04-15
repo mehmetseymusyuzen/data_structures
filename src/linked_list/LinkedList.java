@@ -1,65 +1,53 @@
 package linked_list;
 
-public class LinkedList {
-    Node head;
-    int size;
+public class LinkedList<T> {
+    Node<T> head;
+    Node<T> tail;
 
     public LinkedList() {
         head = null;
-        size = 0;
+        tail = null;
     }
 
-    public void addInOrder(Node n) {
+
+    public void addToHead(final T data) {
+        Node<T> node = new Node<>(data);
+
         if (head == null) {
-            head = n;
-        } else if (head.data > n.data) {
-            n.next = head;
-            head = n;
-        } else {
-            Node tmp = head;
-            while (tmp.next != null && tmp.next.data < n.data) {
-                tmp = tmp.next;
-            }
-            n.next = tmp.next;
-            tmp.next = n;
+            head = node;
+            tail = node;
+            return;
         }
+
+        node.next = head;
+        head = node;
     }
 
-    public void addToTail(Node n) {
+    public void addToTail(final T data) {
+        Node<T> node = new Node<>(data);
+
         if (head == null) {
-            head = n;
-        } else {
-            Node tmp = head;
-            while (tmp.next != null) {
-                tmp = tmp.next;
-            }
-            tmp.next = n;
+            head = node;
+            tail = node;
+            return;
         }
-    }
 
-    public void delete(int data) {
-        if (head == null) {
-            System.out.println("List is Empty");
-        } else if (head.data == data) {
-            head = head.next;
-        } else {
-            Node tmp = head;
-            while (tmp != null) {
-                if (tmp.next.data == data) {
-                    tmp.next = tmp.next.next;
-                }
-                tmp = tmp.next;
-            }
-        }
-    }
+        Node<T> tmp = head;
 
-    public void print() {
-        Node tmp = head;
-        while (tmp != null) {
-            System.out.print(tmp.data + " - ");
+        while (tmp.next != null) {
             tmp = tmp.next;
         }
-        System.out.println();
+        tmp.next = node;
+    }
+
+
+    public void print() {
+        Node<T> tmp = head;
+
+        while (tmp != null) {
+            System.out.print(tmp.data + " ");
+            tmp = tmp.next;
+        }
     }
 
 }
