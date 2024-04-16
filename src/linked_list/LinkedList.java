@@ -11,7 +11,7 @@ public class LinkedList<T> {
 
 
     public void addToHead(final T data) {
-        Node<T> node = new Node<>(data);
+        final Node<T> node = new Node<>(data);
 
         if (head == null) {
             head = node;
@@ -24,7 +24,7 @@ public class LinkedList<T> {
     }
 
     public void addToTail(final T data) {
-        Node<T> node = new Node<>(data);
+        final Node<T> node = new Node<>(data);
 
         if (head == null) {
             head = node;
