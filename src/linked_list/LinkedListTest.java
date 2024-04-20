@@ -18,5 +18,14 @@ public class LinkedListTest {
 
         l.print();
 
+        l.addIntoLinkedList(3, 4);
+        l.print();
+
+        l.addIntoLinkedList(10, 9);
+        l.print();
+
+        l.addIntoLinkedList(0, 0);
+        l.print();
+
     }
 }
