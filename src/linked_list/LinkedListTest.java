@@ -27,5 +27,11 @@ public class LinkedListTest {
         l.addIntoLinkedList(0, 0);
         l.print();
 
+        l.removeFromHead();
+        l.print();
+
+        l.removeFromTail();
+        l.print();
+
     }
 }
