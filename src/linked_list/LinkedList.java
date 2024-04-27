@@ -88,4 +88,34 @@ public class LinkedList<T> {
         System.out.println();
     }
 
+    public void removeFromHead() {
+        if (head == null) {
+            System.out.println("List is empty !");
+        } else if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+        }
+    }
+
+    public void removeFromTail() {
+        if (head == null) {
+            System.out.println("List is empty !");
+        } else if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            Node<T> tmp = head;
+            Node<T> tmp2 = head;
+
+            while (tmp.next != null) {
+                tmp2 = tmp;
+                tmp = tmp.next;
+            }
+            tmp2.next = null;
+            tail = tmp2;
+        }
+    }
+
 }
