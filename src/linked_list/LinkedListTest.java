@@ -33,5 +33,8 @@ public class LinkedListTest {
         l.removeFromTail();
         l.print();
 
+        l.removeIntoLinkedList(4);
+        l.print();
+
     }
 }
