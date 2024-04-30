@@ -78,16 +78,6 @@ public class LinkedList<T> {
         }
     }
 
-    public void print() {
-        Node<T> tmp = head;
-
-        while (tmp != null) {
-            System.out.print(tmp.data + " ");
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
-
     public void removeFromHead() {
         if (head == null) {
             System.out.println("List is empty !");
@@ -116,6 +106,52 @@ public class LinkedList<T> {
             tmp2.next = null;
             tail = tmp2;
         }
+    }
+
+    public void removeIntoLinkedList(final int index) {
+        if (head == null) {
+            System.out.println("List is empty !");
+        } else if (head.next == null && index == 0) {
+            head = null;
+            tail = null;
+        } else if (head.next != null && index == 0) {
+            head = head.next;
+        } else {
+            int count = 0;
+            Node<T> tmp = head;
+            Node<T> tmp2 = head;
+
+            while (tmp != null) {
+                count++;
+                tmp2 = tmp;
+                tmp = tmp.next;
+            }
+            if (count == index) {
+                tmp2.next = null;
+                tail = tmp2;
+            } else {
+                tmp = head;
+                tmp2 = head;
+                int i = 0;
+
+                while (i < index) {
+                    tmp2 = tmp;
+                    tmp = tmp.next;
+                    i++;
+                }
+                tmp2.next = tmp.next;
+            }
+        }
+    }
+
+    public void print() {
+        Node<T> tmp = head;
+
+        while (tmp != null) {
+            System.out.print(tmp.data + " ");
+            tmp = tmp.next;
+        }
+        System.out.println();
     }
 
 }
