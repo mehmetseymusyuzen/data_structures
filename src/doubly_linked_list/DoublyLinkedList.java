@@ -18,6 +18,19 @@ public class DoublyLinkedList<T> {
         }
     }
 
+    void addToTail(final T data) {
+        Node<T> node = new Node<>(data);
+
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            node.prev = tail;
+            tail.next = node;
+            tail = node;
+        }
+    }
+
     public void printFromHead() {
         Node<T> tmp = head;
 
