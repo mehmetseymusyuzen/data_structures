@@ -14,6 +14,8 @@ public class BST_TEST {
         bst.add(12);
         bst.add(18);
 
+        System.out.println(bst.search(30));
+
         bst.print();
 
     }
