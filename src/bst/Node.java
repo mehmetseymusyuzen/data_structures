@@ -11,4 +11,13 @@ public class Node {
         rightChild = null;
     }
 
+    @Override
+    public String toString() {
+        return "Node{" +
+                "data=" + data +
+                ", leftChild=" + leftChild +
+                ", rightChild=" + rightChild +
+                '}';
+    }
+
 }
