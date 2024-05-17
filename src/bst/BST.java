@@ -20,6 +20,18 @@ public class BST {
         return current;
     }
 
+    public Node search(int s) {
+        return searchRecursive(root, s);
+    }
+
+    private Node searchRecursive(Node current, int s) {
+        if (current == null || current.data == s) return current;
+        if (current.data < s) {
+            return searchRecursive(current.rightChild, s);
+        }
+        return searchRecursive(current.leftChild, s);
+    }
+
     public void print() {
         printRecursive(root, "");
     }
