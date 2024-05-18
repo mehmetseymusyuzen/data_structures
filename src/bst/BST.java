@@ -4,6 +4,42 @@ public class BST {
 
     Node root = null;
 
+    public void preOrder() {
+        preOrderRecursive(root);
+    }
+
+    private void preOrderRecursive(Node current) {
+        if (current != null) {
+            System.out.print(current.data + " ");
+            preOrderRecursive(current.leftChild);
+            preOrderRecursive(current.rightChild);
+        }
+    }
+
+    public void inOrder() {
+        inOrderRecursive(root);
+    }
+
+    private void inOrderRecursive(Node current) {
+        if (current != null) {
+            inOrderRecursive(current.leftChild);
+            System.out.print(current.data + " ");
+            inOrderRecursive(current.rightChild);
+        }
+    }
+
+    public void postOrder() {
+        postOrderRecursive(root);
+    }
+
+    private void postOrderRecursive(Node current) {
+        if (current != null) {
+            postOrderRecursive(current.leftChild);
+            postOrderRecursive(current.rightChild);
+            System.out.print(current.data + " ");
+        }
+    }
+
     public void add(int data) {
         root = addRecursive(root, data);
     }
