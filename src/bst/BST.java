@@ -68,6 +68,38 @@ public class BST {
         return searchRecursive(current.leftChild, s);
     }
 
+    public void delete(int data) {
+        root = deleteRecursive(root, data);
+    }
+
+    public Node deleteRecursive(Node current, int data) {
+        if (current == null) return current;
+        if (current.data > data) {
+            current.leftChild = deleteRecursive(current.leftChild, data);
+        }
+        if (current.data < data) {
+            current.rightChild = deleteRecursive(current.rightChild, data);
+        } else {
+            if (current.leftChild == null) return current.rightChild;
+            if (current.rightChild == null) return current.leftChild;
+
+            int leftMax = findMax(current.leftChild);
+            current.data = leftMax;
+            current.leftChild = deleteRecursive(current.leftChild, leftMax);
+        }
+        return current;
+    }
+
+    public int findMax(Node current) {
+        int max = current.data;
+        while (current.rightChild != null) {
+            max = current.rightChild.data;
+            current = current.rightChild;
+        }
+        return max;
+    }
+
+
     public void print() {
         printRecursive(root, "");
     }
