@@ -29,6 +29,13 @@ public class BST_TEST {
 
         System.out.print("Post-Order : ");
         bst.postOrder();
+        System.out.println();
+
+        System.out.println(bst.findMax(bst.root.leftChild.leftChild));
+
+        bst.print();
+        bst.delete(40);
+        bst.print();
 
     }
 }
